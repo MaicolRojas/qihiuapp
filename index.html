@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    
+    <!-- Enlaces a recursos externos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Contenedor principal del formulario de login -->
+    <div class="login-container">
+        
+        <!-- Sección de perfil interactivo para subir imagen -->
+        <div class="profile-circle" onclick="document.getElementById('fileInput').click()">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Usuario" id="imagenPerfil">
+        </div>
+
+        <!-- Selector de idiomas -->
+        <h1 id="" data-translate="welcome">Bienvenido</h1>
+        <div class="language-selector">
+            <!-- Menú desplegable de idiomas -->
+            <div class="selected-language" onclick="toggleLanguageMenu()">
+                <span><img src="assets/icons/co.png" alt="Español" class="language-flag">Español</span> <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="language-menu" id="languageMenu">
+                <!-- Opciones de idioma disponibles con imágenes -->
+                <div class="language-option" onclick="changeLanguage('es-CO')">
+                    <img src="assets/icons/co.png" alt="Español" class="language-flag">
+                    <span>Español</span>
+                </div>
+                <div class="language-option" onclick="changeLanguage('en-US')">
+                    <img src="assets/icons/us.png" alt="Inglés" class="language-flag">
+                    <span>English</span>
+                </div>
+                <div class="language-option" onclick="changeLanguage('ar')">
+                    <img src="assets/icons/eg.png" alt="Árabe" class="language-flag">
+                    <span>العربية</span>
+                </div>
+                <div class="language-option" onclick="changeLanguage('zh-CN')">
+                    <img src="assets/icons/ch.png" alt="Chino Simplificado" class="language-flag">
+                    <span>中文(简体)</span>
+                </div>
+                <div class="language-option" onclick="changeLanguage('zh-TW')">
+                    <img src="assets/icons/hk.png" alt="Chino Tradicional" class="language-flag">
+                    <span>中文(繁體)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Formulario de inicio de sesión -->
+        <form id="loginForm">
+            <!-- Campo de usuario -->
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="usuario" placeholder="Usuario" required>
+            </div>
+
+            <!-- Campo de contraseña con toggle de visibilidad -->
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="contrasena" placeholder="Contraseña" required>
+                <i class="fas fa-eye password-toggle" onclick="cambiarVisibilidadContrasena()" id="toggleIcon"></i>
+            </div>
+
+            <!-- Opciones adicionales: recordar usuario -->
+            <div class="login-options">
+                <div class="remember-me">
+                    <input type="checkbox" id="recordarme">
+                    <label for="recordarme" data-translate="recordarme">Recordarme</label>
+                </div>
+                <div class="forgot-password">
+                    <a href="recuperar-contrasena.html" data-translate="olvidaste">¿Olvidaste tu contraseña?</a>
+                </div>
+            </div>
+
+            <!-- Botón de acción principal -->
+            <button type="submit" class="login-btn" data-translate="iniciar">Iniciar Sesión</button>
+
+            <!-- Enlace modificado para registro de nuevos usuarios -->
+            <div class="forgot-register">
+                <a href="registro.html" data-translate="registro">¿Deseas Registrarte?</a>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="app.js"></script>
+</html>

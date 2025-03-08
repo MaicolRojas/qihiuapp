@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar Contraseña</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Mantener los mismos estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f5f5f5;
+        }
+
+        .login-container {
+            background: #ffffff;
+            padding: 4rem 2.5rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            width: 90%;
+            max-width: 400px;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            font-weight: 500;
+        }
+
+        .input-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #95a5a6;
+            font-size: 1.1rem;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px 40px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #2c3e50;
+            transition: border-color 0.3s ease;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 14px;
+            background: #3498db;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .login-btn:hover {
+            background: #2980b9;
+        }
+
+        .back-to-login {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .back-to-login a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-login a:hover {
+            text-decoration: underline;
+        }
+
+        .instructions {
+            color: #95a5a6;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1 data-translate="recuperar">Recuperar Contraseña</h1>
+        <div class="language-selector">
+            <!-- Menú desplegable de idiomas -->
+            <div class="selected-language" onclick="toggleLanguageMenu()">
+                <span><img src="assets/icons/co.png" alt="Español" class="language-flag">Español</span> <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="language-menu" id="languageMenu">
+                <!-- Opciones de idioma disponibles con imágenes -->
+                <div class="language-option" onclick="changeLanguage('es-CO')">
+                    <img src="assets/icons/co.png" alt="Español" class="language-flag">
+                    <span>Español</span>
+                </div>
+                <div class="language-option" onclick="changeLanguage('en-US')">
+                    <img src="assets/icons/us.png" alt="Inglés" class="language-flag">
+                    <span>English</span>
+                </div>
+                <div class="language-option" onclick="changeLanguage('ar')">
+                    <img src="assets/icons/eg.png" alt="Árabe" class="language-flag">
+                    <span>العربية</span>
+                </div>
+                <div class="language-option" onclick="changeLanguage('zh-CN')">
+                    <img src="assets/icons/ch.png" alt="Chino Simplificado" class="language-flag">
+                    <span>中文(简体)</span>
+                </div>
+                <div class="language-option" onclick="changeLanguage('zh-TW')">
+                    <img src="assets/icons/hk.png" alt="Chino Tradicional" class="language-flag">
+                    <span>中文(繁體)</span>
+                </div>
+            </div>
+        </div>
+        <form id="recoveryForm">
+            <p class="instructions" data-translate="instrucciones">Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.</p>
+            
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" placeholder="Correo electrónico" data-translate="correo" required>
+            </div>
+            <button type="submit" class="login-btn" data-translate="enviar">Enviar Instrucciones</button>
+            <div class="back-to-login">
+                <a href="index.html" data-translate="yaTienesCuenta">← Volver al Inicio de Sesión</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

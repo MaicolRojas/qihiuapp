@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Configuración básica del documento -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Usuario</title>
+
+    <!-- Enlaces a estilos y scripts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <!-- Contenedor principal del formulario de registro -->
+    <div class="login-container">
+        <h1 data-translate="crearCuenta">Crear Cuenta</h1>
+
+        <!-- Formulario con validación al enviar -->
+        <form onsubmit="return validarRegistro()">
+            <div class="language-selector">
+                <!-- Menú desplegable de idiomas -->
+                <div class="selected-language" onclick="toggleLanguageMenu()">
+                    <span><img src="assets/icons/co.png" alt="Español" class="language-flag">Español</span> <i
+                        class="fas fa-chevron-down"></i>
+                </div>
+                <div class="language-menu" id="languageMenu">
+                    <!-- Opciones de idioma disponibles con imágenes -->
+                    <div class="language-option" onclick="changeLanguage('es-CO')">
+                        <img src="assets/icons/co.png" alt="Español" class="language-flag">
+                        <span>Español</span>
+                    </div>
+                    <div class="language-option" onclick="changeLanguage('en-US')">
+                        <img src="assets/icons/us.png" alt="Inglés" class="language-flag">
+                        <span>English</span>
+                    </div>
+                    <div class="language-option" onclick="changeLanguage('ar')">
+                        <img src="assets/icons/eg.png" alt="Árabe" class="language-flag">
+                        <span>العربية</span>
+                    </div>
+                    <div class="language-option" onclick="changeLanguage('zh-CN')">
+                        <img src="assets/icons/ch.png" alt="Chino Simplificado" class="language-flag">
+                        <span>中文(简体)</span>
+                    </div>
+                    <div class="language-option" onclick="changeLanguage('zh-TW')">
+                        <img src="assets/icons/hk.png" alt="Chino Tradicional" class="language-flag">
+                        <span>中文(繁體)</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Campo de nombre de usuario -->
+            <div class="input-group">
+                <i class="fas fa-user"></i>
+                <input type="text" id="usuario" placeholder="Usuario" data-translate="usuario" required>
+            </div>
+
+            <!-- Campo de teléfono con formato colombiano -->
+            <div class="input-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" id="telefono" placeholder="+57 300 123 4567" data-translate="telefono"
+                    pattern="\+57\d{10}" title="Formato: +57 seguido de 9 dígitos" required>
+            </div>
+
+            <!-- Campos de contraseña y confirmación -->
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="contrasena" placeholder="Contraseña" data-translate="contrasena" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="confirmarContrasena" placeholder="Confirmar Contraseña" data-translate="confirmarContrasena" required>
+            </div>
+
+            <!-- Botón de registro -->
+            <button type="submit" class="login-btn" data-translate="registro">Registrarse</button>
+
+            <!-- Enlace para volver al login -->
+            <div class="forgot-register">
+                <a href="index.html" data-translate="yaTienesCuenta">¿Ya tienes cuenta? Inicia Sesión</a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
